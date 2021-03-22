@@ -5,7 +5,6 @@ var cityElems = document.getElementsByClassName("città");
 for (let elem of cityElems ) {
   elem.onclick = () => display(elem.innerHTML);
 }
-console.log(media());
 
 // Funzione collegata ai bottoni
 // "window" necessario in StackBlitz, può essere
@@ -54,7 +53,6 @@ function media()  {
         document.getElementById("risposta").innerText = "Errore";
       }
     };
-    console.log(c.innerHTML);
     request.open(
       "GET",
       "https://api.openweathermap.org/data/2.5/weather?APPID=d0fda39104b3c7c45fe031a5392964c1&units=metric&q=" +
