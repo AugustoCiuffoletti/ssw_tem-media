@@ -1,8 +1,8 @@
 // Import stylesheets
-import "./style.css"; 
+import "./style.css";
 
 var cityElems = document.getElementsByClassName("città");
-for (let elem of cityElems ) {
+for (let elem of cityElems) {
   elem.onclick = () => display(elem.innerHTML);
 }
 media();
@@ -24,7 +24,6 @@ function display(city) {
       document.getElementById("risposta").innerText = "Errore";
     }
   };
-
   // Applico il metodo "open"
   request.open(
     "GET",
@@ -34,21 +33,22 @@ function display(city) {
   );
   // Applico il metodo send (al termine chiamerà il callback "onload")
   request.send();
-};
+}
 
-function media()  {
+function media() {
   var c;
-  var t=0;
-  for ( let c of cityElems ) {
+  var t = 0;
+  for (let c of cityElems) {
+    let city = c.innerHTML;
     let request = new XMLHttpRequest(); // Costruzione dell'oggetto "request"
 
-  // Funzione callback invocata quando la request termina
+    // Funzione callback invocata quando la request termina
     request.onload = function() {
-    // funzione definita arrow
+      // funzione definita arrow
       if (request.status === 200) {
         var dataObject = JSON.parse(request.response);
         console.log(dataObject.main.temp);
-        t += dataObject.main.temp/cityElems.length;
+        t += dataObject.main.temp / cityElems.length;
         document.getElementById("media").innerText = t;
       } else {
         document.getElementById("risposta").innerText = "Errore";
@@ -57,9 +57,9 @@ function media()  {
     request.open(
       "GET",
       "https://api.openweathermap.org/data/2.5/weather?APPID=d0fda39104b3c7c45fe031a5392964c1&units=metric&q=" +
-      c.innerHTML,
+        city,
       true
     );
-    request.send()
+    request.send();
   }
 }
