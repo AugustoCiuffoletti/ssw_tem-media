@@ -9,7 +9,6 @@ for (let elem of cityElems) {
 calcoloMedia.onclick = () => media();
 
 function doCity(city, callback) {
-  console.log(city);
   var request = new XMLHttpRequest(); // Costruzione dell'oggetto "request"
   // Funzione callback invocata quando la request termina
   request.onload = function() {
@@ -36,7 +35,6 @@ function display(city) {
   doCity(city, data => {
     document.getElementById("risposta").innerHTML =
       "A " + city + " ci sono " + data.main.temp + " gradi";
-    return 1;
   });
 }
 
