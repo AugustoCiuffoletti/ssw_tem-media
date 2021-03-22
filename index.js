@@ -27,7 +27,7 @@ function display(city) {
   // Applico il metodo "open"
   request.open(
     "GET",
-    "https://api.openweathermap.org/data/2.5/weather?APPID=d0fda39104b3c7c45fe031a5392964c1&units=metric&q=" +
+    "https://api.openweathermap.org/data/2.5/weather?APPID=9bd419b49d4261031516ad5fddac3439&units=metric&q=" +
       city,
     true
   );
@@ -56,7 +56,7 @@ function media() {
     };
     request.open(
       "GET",
-      "https://api.openweathermap.org/data/2.5/weather?APPID=d0fda39104b3c7c45fe031a5392964c1&units=metric&q=" +
+      "https://api.openweathermap.org/data/2.5/weather?APPID=9bd419b49d4261031516ad5fddac3439&units=metric&q=" +
         city,
       true
     );
