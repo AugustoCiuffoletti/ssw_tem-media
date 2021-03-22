@@ -5,6 +5,7 @@ var cityElems = document.getElementsByClassName("città");
 for (let elem of cityElems ) {
   elem.onclick = () => display(elem.innerHTML);
 }
+media();
 
 // Funzione collegata ai bottoni
 // "window" necessario in StackBlitz, può essere
